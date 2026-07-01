@@ -1,12 +1,37 @@
 {
-  "name": "pi-vision-bridge",
+  "name": "@fabkho/pi-vision-bridge",
   "version": "1.0.0",
+  "type": "module",
   "description": "Vision bridge for Pi — transparent image support for text-only models via Gemini",
-  "keywords": ["pi-package", "vision", "bridge", "image", "coding-agent"],
-  "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabkho/pi-vision-bridge.git"
+  },
+  "keywords": ["pi-package", "vision", "bridge", "image", "coding-agent"],
+  "files": [
+    "extensions",
+    "skills"
+  ],
   "pi": {
     "extensions": ["./extensions"],
     "skills": ["./skills"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": { "optional": true },
+    "@earendil-works/pi-ai": { "optional": true },
+    "@earendil-works/pi-agent-core": { "optional": true },
+    "@earendil-works/pi-tui": { "optional": true }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.79.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
   }
 }

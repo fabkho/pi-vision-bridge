@@ -201,10 +201,10 @@ You are a documentation writer. Write clear, concise docs.
 
 ## 4. Vision Proxy — See Images with DeepSeek
 
-Install the `pi-vision-bridge` package (which includes this skill and the vision-proxy extension):
+Install `@fabkho/pi-vision-bridge` (which includes this skill and the vision-proxy extension):
 
 ```bash
-pi install /path/to/pi-vision-bridge
+pi install @fabkho/pi-vision-bridge
 ```
 
 Requires `GEMINI_API_KEY` environment variable.
