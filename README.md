@@ -22,7 +22,7 @@ Guided skill for configuring text-only models in Pi — `models.json`, thinking 
 ## Install
 
 ```bash
-pi install @fabkho/pi-vision-bridge
+pi install pi-vision-bridge
 ```
 
 Or locally:

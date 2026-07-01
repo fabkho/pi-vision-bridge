@@ -204,7 +204,7 @@ You are a documentation writer. Write clear, concise docs.
 Install `@fabkho/pi-vision-bridge` (which includes this skill and the vision-proxy extension):
 
 ```bash
-pi install @fabkho/pi-vision-bridge
+pi install pi-vision-bridge
 ```
 
 Requires `GEMINI_API_KEY` environment variable.
