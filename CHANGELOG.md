@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/fabkho/pi-vision-bridge/compare/pi-vision-bridge-1.0.0...pi-vision-bridge-1.1.0) (2026-07-01)
+
+
+### Features
+
+* add workflow_dispatch trigger ([15f468b](https://github.com/fabkho/pi-vision-bridge/commit/15f468b2baa0340984f2e2922f718dd4eeae1d90))
+
 ## [1.0.0] - 2026-07-01
 
 ### Added
