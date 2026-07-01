@@ -1,8 +1,8 @@
 {
-  "name": "deepseek-pi",
+  "name": "pi-vision-bridge",
   "version": "1.0.0",
-  "description": "DeepSeek V4 optimization pack for Pi coding agent — vision proxy extension + setup skill",
-  "keywords": ["pi-package", "deepseek", "vision", "coding-agent"],
+  "description": "Vision bridge for Pi — transparent image support for text-only models via Gemini",
+  "keywords": ["pi-package", "vision", "bridge", "image", "coding-agent"],
   "author": "",
   "license": "MIT",
   "pi": {

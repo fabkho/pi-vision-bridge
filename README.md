@@ -1,61 +1,57 @@
-# DeepSeek Pi Pack
+# pi-vision-bridge
 
-Optimization pack for using [DeepSeek V4](https://api-docs.deepseek.com/) with the [Pi coding agent](https://pi.dev).
+Transparent image support for text-only models in the [Pi coding agent](https://pi.dev).
+
+**Why this exists:** DeepSeek V4 (and other text-only models) can't see images. When you paste a screenshot or the agent reads an image file, the content is silently dropped. This extension bridges that gap — it forwards images to Gemini for description and injects the text so any model can "see" them.
+
+Works with **any text-only model**, not just DeepSeek. Vision-capable models (Claude, GPT, Gemini) are skipped automatically.
 
 ## What's included
 
-### Vision Proxy Extension
-When using DeepSeek (text-only), automatically forwards screenshots to Gemini for description — so DeepSeek can "see" images.
-
+### Vision Bridge Extension
 - Intercepts pasted images (Ctrl+V) and `read` tool calls on image files
-- Uses Gemini 2.5 Flash for fast, cheap descriptions ($0.00096/call)
-- Optimized prompt for UI debugging (spacing, alignment, glitches)
+- Forwards to Gemini 2.5 Flash for fast, cheap descriptions (~$0.001/call)
+- UI-debugging-optimized prompt — calls out spacing, alignment, glitches
 - In-memory cache avoids re-processing the same file
-- Skips entirely when a vision-capable model is active
+- `/vision-proxy` command toggles on/off at runtime
+- `PI_VISION_MODEL` env var to override the vision model
 
-### DeepSeek Setup Skill
-Guided skill for configuring DeepSeek in Pi — sets up `models.json`, thinking levels, sub-agents, and compaction tuned for the 1M context window.
-
-Invoke with `/skill:deepseek-setup` or let the agent auto-load it.
+### Setup Skill (optional)
+Guided skill for configuring text-only models in Pi — `models.json`, thinking levels, and compaction tuned for large context windows. Invoke with `/skill:deepseek-setup`.
 
 ## Install
 
 ```bash
-pi install git:github.com/<user>/deepseek-pi
+pi install git:github.com/<user>/pi-vision-bridge
 ```
 
-Or install locally:
+Or locally:
 
 ```bash
-pi install /path/to/deepseek-pi
+pi install /path/to/pi-vision-bridge
 ```
 
 ## Requirements
 
-- **Vision proxy**: `GEMINI_API_KEY` environment variable
-- **DeepSeek**: `DEEPSEEK_API_KEY` environment variable
+- `GEMINI_API_KEY` environment variable
 
 ## Configuration
 
-### Vision model override
-
-Set `PI_VISION_MODEL` to use a different Gemini model:
-
 ```bash
-export PI_VISION_MODEL=gemini-2.5-flash-lite  # ultra-cheap
-export PI_VISION_MODEL=gemini-3.5-flash        # latest gen
+# Override the vision model (default: gemini-2.5-flash)
+export PI_VISION_MODEL=gemini-2.5-flash-lite   # ultra-cheap
+export PI_VISION_MODEL=gemini-3.5-flash         # latest gen
 ```
 
-Default: `gemini-2.5-flash`.
+## Usage
 
-### DeepSeek setup
+Once installed, it works automatically. When you're on a text-only model:
 
-Run `/skill:deepseek-setup` and follow the guided setup. The skill will help you:
+- **Paste an image** (Ctrl+V) → Gemini describes it, injected into conversation
+- **Agent reads an image file** → same flow, cached per file path
+- **Switch to a vision model** → extension skips itself, zero overhead
 
-1. Configure `models.json` with proper thinking levels
-2. Set up recommended compaction for 1M context
-3. Create sub-agent definitions tuned for DeepSeek
-4. Optimize settings for the best experience
+Toggle with `/vision-proxy` in your Pi session.
 
 ## License
 
