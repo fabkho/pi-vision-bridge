@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/fabkho/pi-vision-bridge/compare/pi-vision-bridge-1.1.0...pi-vision-bridge-1.1.1) (2026-07-01)
+
+
+### Bug Fixes
+
+* drop npm scope — publish as pi-vision-bridge ([e9c5cd1](https://github.com/fabkho/pi-vision-bridge/commit/e9c5cd14ddc70c6d2412a63ffc2524cd88aea022))
+* trigger release with unscoped package name ([af943d7](https://github.com/fabkho/pi-vision-bridge/commit/af943d704690cd98ccbd5a80d0bc0b8278b67d77))
+
 ## [1.1.0](https://github.com/fabkho/pi-vision-bridge/compare/pi-vision-bridge-1.0.0...pi-vision-bridge-1.1.0) (2026-07-01)
 
 
