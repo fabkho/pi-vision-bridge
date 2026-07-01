@@ -1,0 +1,12 @@
+{
+  "name": "deepseek-pi",
+  "version": "1.0.0",
+  "description": "DeepSeek V4 optimization pack for Pi coding agent — vision proxy extension + setup skill",
+  "keywords": ["pi-package", "deepseek", "vision", "coding-agent"],
+  "author": "",
+  "license": "MIT",
+  "pi": {
+    "extensions": ["./extensions"],
+    "skills": ["./skills"]
+  }
+}
